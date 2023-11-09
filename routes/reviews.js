@@ -9,6 +9,6 @@ router.get('/:id', reviewsControllers.getSingle);
 //add put and delete endpoints
 router.put('/:id', reviewsControllers.updateReview);
 router.delete('/:id', reviewsControllers.deleteReview);
-
+router.post('/', reviewsControllers.createReview);
 
 module.exports = router;

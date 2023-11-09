@@ -48,10 +48,27 @@ const deleteReview = async (req, res) => {
     }
 };
 
+const createReview = async (req, res) => {
+    //#swagger.tags = ['reviews']
+    const review = {
+        name: req.body.name,
+        summary: req.body.summary,
+        space: req.body.space,
+        description: req.body.description
+    };
+    const response = await mongodb.getDatabase().db().collection('reviews').insertOne( review );
+    if (response.acknowledged) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(response.error || 'Some error occurred while updating the review.');
+    }
+};
+
 
 module.exports = {
     getAll,
     getSingle,
     updateReview,
-    deleteReview
+    deleteReview,
+    createReview
 };
