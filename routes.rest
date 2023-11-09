@@ -1,0 +1,18 @@
+###
+GET http://localhost:3000/reviews
+
+###
+
+GET http://localhost:3000/reviews/654d0d6f03454456cd0fd079
+
+###
+PUT http://localhost:3000/reviews/654d0d6f03454456cd0fd079 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name"          : "NYC - Upper West Side Apt",
+    "summary"       : "Murphey bed, super uncomfortable",
+    "space"         : "",
+    "description"  : "Apartment"
+    
+}

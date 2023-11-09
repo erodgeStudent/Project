@@ -2,6 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
+    //#swagger.tags = ['reviews]
     const result = await mongodb.getDatabase().db().collection('reviews').find();
     result.toArray().then((reviews) => {
         res.setHeader('Content-Type', 'application/json');
@@ -23,16 +24,10 @@ const updateReview = async (req, res) => {
     //#swagger.tags = ['reviews']
     const reviewId = new ObjectId(req.params.id);
     const review = {
-        listing_url: req.body.listing_url,
         name: req.body.name,
         summary: req.body.summary,
         space: req.body.space,
-        access: req.body.access,
-        house_rules: req.body.house_rules,
-        property_type: req.body.property_type,
-        room_type: req.body.room_type,
-        price: req.body.price,
-        images: req.body.images
+        description: req.body.description
     };
     const response = await mongodb.getDatabase().db().collection('reviews').replaceOne( { _id: reviewId }, review);
     if (response.modifiedCount > 0 ) {
