@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
 const app = express();
-const port = process.env.port || 3000;
+const port = process.env.port;
 
 app.use(bodyParser.json());
 app.use('/', require('./routes'));
