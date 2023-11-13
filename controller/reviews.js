@@ -2,7 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
-    //#swagger.tags = ['reviews]
+    //#swagger.tags = ['reviews']
     const result = await mongodb.getDatabase().db().collection('reviews').find();
     result.toArray().then((reviews) => {
         res.setHeader('Content-Type', 'application/json');
@@ -11,6 +11,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags = ['reviews']
     const reviewId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('reviews').find({ _id: reviewId });
     result.toArray().then((reviews) => {

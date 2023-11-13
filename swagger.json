@@ -5,7 +5,7 @@
     "description": "users Api",
     "version": "1.0.0"
   },
-  "host": "project1-b6jb.onrender.com",
+  "host": "https://bnb-reviews.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -24,10 +24,11 @@
         }
       }
     },
-    "/users/": {
+    
+    "/reviews/": {
       "get": {
         "tags": [
-          "users"
+          "reviews"
         ],
         "description": "",
         "produces": [
@@ -41,7 +42,7 @@
       },
       "post": {
         "tags": [
-          "users"
+          "reviews"
         ],
         "description": "",
         "parameters": [
@@ -51,16 +52,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "username": {
-                  "example": "any"
-                },
                 "name": {
                   "example": "any"
                 },
-                "ipaddress": {
+                "summary": {
+                  "example": "any"
+                },
+                "space": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
@@ -77,10 +78,32 @@
         }
       }
     },
-    "/users/{id}": {
+    "/reviews/{id}": {
+      "get": {
+        "tags": [
+          "reviews"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "put": {
         "tags": [
-          "users"
+          "reviews"
         ],
         "description": "",
         "parameters": [
@@ -96,16 +119,16 @@
             "schema": {
               "type": "object",
               "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "username": {
-                  "example": "any"
-                },
                 "name": {
                   "example": "any"
                 },
-                "ipaddress": {
+                "summary": {
+                  "example": "any"
+                },
+                "space": {
+                  "example": "any"
+                },
+                "description": {
                   "example": "any"
                 }
               }
@@ -120,14 +143,20 @@
             "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/users/id": {
+      },
       "delete": {
         "tags": [
-          "users"
+          "reviews"
         ],
         "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "204": {
             "description": "No Content"
