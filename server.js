@@ -13,13 +13,11 @@ app
     .use(bodyParser.json())
     .use(session({
         cookie:{
-            secret: "secret",
-            saveUninitialized: true ,
-            resave: false
-        }
-    
-     
-    
+           secure: true 
+            },
+        secret: "secret",
+        saveUninitialized: true ,
+        resave: false
     }))
     .use(passport.initialize())
     .use(passport.session())
