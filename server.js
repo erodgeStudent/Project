@@ -3,23 +3,18 @@ const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.set('trust proxy', 1);
-
 app
     .use(bodyParser.json())
     .use(session({
-        
         secret: "secret",
         saveUninitialized: true ,
         resave: false,
-        store: new MongoStore(options)
     }))
     .use(passport.initialize())
     .use(passport.session())
@@ -33,12 +28,6 @@ app
             'Access-Control-Allow-Methods', 
             'GET, POST, PUT, DELETE, OPTIONS, PATCH'
             );
-        next();
-    })
-    .use(function(req, res, next) {
-        if(!req.session){
-            return next(new Error('Oh no'))
-        }
         next();
     })
 
