@@ -5,7 +5,7 @@
     "description": "users Api",
     "version": "1.0.0"
   },
-  "host": "https://bnb-reviews.onrender.com",
+  "host": "://bnb-reviews.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
