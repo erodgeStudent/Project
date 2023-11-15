@@ -9,9 +9,16 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.set('trust proxy', 1);
+
 app
     .use(bodyParser.json())
     .use(session({
+        cookie : {
+            secure:true,
+            maxAge:60000
+            },
+        store: new RedisStore(),
         secret: "secret",
         saveUninitialized: true ,
         resave: false
@@ -28,6 +35,12 @@ app
             'Access-Control-Allow-Methods', 
             'GET, POST, PUT, DELETE, OPTIONS, PATCH'
             );
+        next();
+    })
+    .use(function(req, res, next) {
+        if(!req.session){
+            return next(new Error('Oh no'))
+        }
         next();
     })
 
