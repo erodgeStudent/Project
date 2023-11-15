@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const GitHubStrategy = require('passport-github2').Strategy;
 const cors = require('cors');
 
@@ -14,14 +15,11 @@ app.set('trust proxy', 1);
 app
     .use(bodyParser.json())
     .use(session({
-        cookie : {
-            secure:true,
-            maxAge:60000
-            },
-        // store: new RedisStore(),
+        
         secret: "secret",
         saveUninitialized: true ,
-        resave: false
+        resave: false,
+        store: new MongoStore(options)
     }))
     .use(passport.initialize())
     .use(passport.session())
