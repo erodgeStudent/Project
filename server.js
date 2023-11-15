@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv').config();
 const mongodb = require('./data/database');
 const passport = require('passport');
 const session = require('express-session');
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 app.use(session({
         secret: "secret",
         saveUninitialized: true ,
-        resave: false,
+        resave: false
     }));
     
 app.use(passport.initialize());
@@ -27,7 +28,7 @@ app.use((req, res, next) => {
         );
         res.setHeader(
             'Access-Control-Allow-Methods', 
-            'GET, POST, PUT, DELETE, OPTIONS'
+            'POST, GET, PUT, PATCJ, OPTIONS, DELETE'
             );
         next();
     });
@@ -42,7 +43,7 @@ app.use('/', require('./routes/index.js'));
         callbackURL: process.env.CALLBACK_URL
         },
         function(accessToken, refreshToken, profile, done) {
-            //user.findOrCreate({ githubId: profile.id }, function (err, user) {
+            //reviews.findOrCreate({ githubId: profile.id }, function (err, user) {
                 return done(null, profile);
 
             // });

@@ -7,9 +7,9 @@ const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/', restaurantsController.getAll);
 router.get('/:id', restaurantsController.getSingle);
+router.post('/', isAuthenticated, restaurantsController.createRestaurant);
 router.put('/:id', isAuthenticated, restaurantsController.updateRestaurant);
 router.delete('/:id', isAuthenticated, restaurantsController.deleteRestaurant);
-router.post('/', isAuthenticated, restaurantsController.createRestaurant);
 
-module.exports = 
-    router;
+
+module.exports = router;
