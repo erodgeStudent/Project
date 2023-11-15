@@ -12,12 +12,12 @@ Content-type: application/json
 {
     
         "address":"2187",
-        "street name":"Stillwell Avenue",
+        "review":"4.5 stars",
         "zip":"11224",
         "cuisine":"American",
         "name":"Riviera Caterer",
         "price":"$$",
-        "review":"4.5 stars"
+        "street":"Stillwell Avenue"
             
 }
 
@@ -27,12 +27,12 @@ Content-Type: application/json
 
 {
         "address":"2187",
-        "street name":"Stillwell Avenue",
+        "review":"4.5 stars",
         "zip":"11224",
         "cuisine":"American",
         "name":"Riviera Caterer",
         "price":"$$",
-        "review":"4.5 stars"
+        "street":"Stillwell Avenue"
         
 }
 
@@ -57,12 +57,12 @@ Content-type: application/json
 
 {
         "address":"1234",
-        "street name":"Alphabet Avenue",
+        "review":"5 stars",
         "zip":"11225",
         "cuisine":"Italian",
         "name":"Pizza Spaghetti",
         "price":"$$$$$",
-        "review":"5 stars"
+        "street":"Alphabet Avenue"
     
 }
 
@@ -72,12 +72,12 @@ Content-Type: application/json
 
 {
         "address":"2187",
-        "street name":"Stillwell Avenue",
+        "review":"4.5 stars",
         "zip":"11224",
         "cuisine":"American",
         "name":"Riviera Caterer",
         "price":"$$",
-        "review":"4.5 stars"
+        "street":"Stillwell Avenue"
     
 }
 
