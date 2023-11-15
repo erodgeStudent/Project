@@ -12,9 +12,14 @@ const port = process.env.PORT || 3000;
 app
     .use(bodyParser.json())
     .use(session({
-    secret: "secret",
-    resave: false ,
-    saveUninitialized: true ,
+        cookie:{
+            secret: "secret",
+            saveUninitialized: true ,
+            resave: false
+        }
+    
+     
+    
     }))
     .use(passport.initialize())
     .use(passport.session())
@@ -41,7 +46,7 @@ app
         callbackURL: process.env.CALLBACK_URL
         },
         function(accessToken, refreshToken, profile, done) {
-            //reviews.findOrCreate({ githubId: profile.id }, function (err, user) {
+            //user.findOrCreate({ githubId: profile.id }, function (err, user) {
                 return done(null, profile);
 
             // });
