@@ -3,7 +3,7 @@ GET http://localhost:3000/reviews
 
 ###
 
-GET http://localhost:3000/reviews/654d0d6f03454456cd0fd079
+GET http://localhost:3000/reviews/654d0dd503454456cd0fd07a
 
 ###add review
 POST http://localhost:3000/reviews HTTP/1.1
@@ -18,7 +18,7 @@ Content-type: application/json
 }
 
 ###
-PUT http://localhost:3000/reviews/654d0d6f03454456cd0fd079 HTTP/1.1
+PUT http://localhost:3000/reviews/654e2f13a2566de0bab88100 HTTP/1.1
 Content-Type: application/json
 
 {
