@@ -1,0 +1,75 @@
+###
+GET http://localhost:3000/reviews
+
+###
+
+GET http://localhost:3000/reviews/654d0d6f03454456cd0fd079
+
+###add review
+POST http://localhost:3000/reviews HTTP/1.1
+Content-type: application/json
+
+{
+    "name"          : "New York City - Upper West Side Apt",
+    "summary"       : "Murphey bed, super uncomfortable",
+    "space"         : "",
+    "description"  : "Apartment"
+    
+}
+
+###
+PUT http://localhost:3000/reviews/654d0d6f03454456cd0fd079 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name"          : "New Y - Upper West Side Apt",
+    "summary"       : "Murphey bed, super uncomfortable",
+    "space"         : "",
+    "description"  : "Apartment"
+    
+}
+
+###delete REVIEW
+PUT http://localhost:3000/reviews/654d0d6f03454456cd0fd079
+
+###
+
+
+//PRODUCTION
+
+###
+GET https://bnb-reviews.onrender.com/reviews
+
+###
+
+GET https://bnb-reviews.onrender.com/reviews/654d0d6f03454456cd0fd079
+
+###add review
+POST https://bnb-reviews.onrender.com/reviews HTTP/1.1
+Content-type: application/json
+
+{
+    "name"          : "New York City - Upper West Side Apt",
+    "summary"       : "Murphey bed, super uncomfortable",
+    "space"         : "",
+    "description"  : "Apartment"
+    
+}
+
+###
+PUT https://bnb-reviews.onrender.com/reviews/654d0d6f03454456cd0fd079 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name"          : "New Y - Upper West Side Apt",
+    "summary"       : "Murphey bed, super uncomfortable",
+    "space"         : "",
+    "description"  : "Apartment"
+    
+}
+
+###delete REVIEW
+PUT https://bnb-reviews.onrender.com/reviews/654d0d6f03454456cd0fd079
+
+###
+

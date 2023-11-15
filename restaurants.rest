@@ -1,0 +1,88 @@
+###
+GET http://localhost:3000/restaurants
+
+###
+
+GET http://localhost:3000/restaurants/
+
+###add review
+POST http://localhost:3000/restaurants HTTP/1.1
+Content-type: application/json
+
+{
+    
+        "address":"2187",
+        "street name":"Stillwell Avenue",
+        "zip":"11224",
+        "cuisine":"American",
+        "name":"Riviera Caterer",
+        "price":"$$",
+        "review":"4.5 stars"
+            
+}
+
+###
+PUT http://localhost:3000/restaurants/ HTTP/1.1
+Content-Type: application/json
+
+{
+        "address":"2187",
+        "street name":"Stillwell Avenue",
+        "zip":"11224",
+        "cuisine":"American",
+        "name":"Riviera Caterer",
+        "price":"$$",
+        "review":"4.5 stars"
+        
+}
+
+###delete REVIEW
+PUT http://localhost:3000/restaurants/
+
+###
+
+
+//PRODUCTION
+
+###
+GET https://bnb-reviews.onrender.com/restaurants
+
+###
+
+GET https://bnb-reviews.onrender.com/restaurants/6554bbdf646f4031efc8eacd
+
+###add review
+POST https://bnb-reviews.onrender.com/restaurants HTTP/1.1
+Content-type: application/json
+
+{
+        "address":"1234",
+        "street name":"Alphabet Avenue",
+        "zip":"11225",
+        "cuisine":"Italian",
+        "name":"Pizza Spaghetti",
+        "price":"$$$$$",
+        "review":"5 stars"
+    
+}
+
+###
+PUT https://bnb-reviews.onrender.com/restaurants/ HTTP/1.1
+Content-Type: application/json
+
+{
+        "address":"2187",
+        "street name":"Stillwell Avenue",
+        "zip":"11224",
+        "cuisine":"American",
+        "name":"Riviera Caterer",
+        "price":"$$",
+        "review":"4.5 stars"
+    
+}
+
+###delete REVIEW
+PUT https://bnb-reviews.onrender.com/restaurants/
+
+###
+
