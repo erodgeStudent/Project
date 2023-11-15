@@ -12,9 +12,6 @@ const port = process.env.PORT || 3000;
 app
     .use(bodyParser.json())
     .use(session({
-        cookie:{
-           secure: true 
-            },
         secret: "secret",
         saveUninitialized: true ,
         resave: false
