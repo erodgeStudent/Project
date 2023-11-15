@@ -5,8 +5,10 @@ const doc = {
         title: 'Users Api',
         description: 'users Api'
     },
-    host: 'https://bnb-reviews.onrender.com',
-    schemes: ['https']
+    host: 'bnb-reviews.onrender.com',
+    schemes: [
+        'https'
+    ]
 };
 
 const outputFile = './swagger.json';
