@@ -15,21 +15,21 @@ app.use(bodyParser.json());
 app.use(session({
         secret: "secret",
         resave: false,
-        saveUninitialized: true ,
+        saveUninitialized: true
         
     }));
     
 app.use(passport.initialize());
 app.use(passport.session());
 app.use((req, res, next) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader(
-            'Access-Control-Allow-Headers',
-            'Origin, X-Requested-With, Content-Type, Accept, Z-Key'
+            "Access-Control-Allow-Headers",
+            "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
         );
         res.setHeader(
-            'Access-Control-Allow-Methods', 
-            'POST, GET, PUT, PATCJ, OPTIONS, DELETE'
+            "Access-Control-Allow-Methods", 
+            "POST, GET, PUT, PATCH, OPTIONS, DELETE"
             );
         next();
     });
