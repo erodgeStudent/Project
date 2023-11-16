@@ -4,8 +4,8 @@ const reviewsControllers = require('../controller/reviews');
 
 const { isAuthenticated } = require('../middleware/authenticate');
 
-router.get('/', reviewsControllers.getAll);
-router.get('/:id', reviewsControllers.getSingle);
+router.get('/', reviewsControllers.getAllReviews);
+router.get('/:id', reviewsControllers.getSingleReview);
 //add put and delete endpoints
 router.post('/', isAuthenticated, reviewsControllers.createReview);
 router.put('/:id', isAuthenticated, reviewsControllers.updateReview);
