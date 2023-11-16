@@ -2,6 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllRestaurants = async (req, res) => {
+    console.log("inside getall restaurants");
     //#swagger.tags = ['restaurants']
     const result = await mongodb.getDatabase().db('project').collection('restaurants').find();
     result.toArray().then((restaurants) => {
@@ -11,6 +12,7 @@ const getAllRestaurants = async (req, res) => {
 };
 
 const getSingleRestaurant = async (req, res) => {
+    console.log("inside getsingle restaurant");
     //#swagger.tags = ['restaurants']
     const restaurantId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db('project').collection('restaurants').find({ _id: restaurantId });
