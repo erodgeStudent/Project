@@ -22,7 +22,7 @@ Content-type: application/json
 }
 
 ###
-PUT http://localhost:3000/restaurants/ HTTP/1.1
+PUT http://localhost:3000/restaurants/6554bb0c646f4031efc8eacc HTTP/1.1
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
         "review":"4.5 stars",
         "zip":"11224",
         "cuisine":"American",
-        "name":"Riviera Caterer",
+        "name":"Riviera Catering",
         "price":"$$",
         "street":"Stillwell Avenue"
         

@@ -20,6 +20,7 @@ const getSingle = async (req, res) => {
     });
 };
 
+
 //for put and delete endpoints
 const updateReview = async (req, res) => {
     //#swagger.tags = ['reviews']
