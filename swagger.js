@@ -5,9 +5,9 @@ const doc = {
         title: 'Users Api',
         description: 'users Api'
     },
-    host: 'localhost:3000',
+    host: 'bnb-reviews.onrender.com',
     schemes: [
-        'http', 'https'
+        'https'
     ]
 };
 
