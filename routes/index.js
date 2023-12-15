@@ -5,13 +5,6 @@ router.use('/', require('./swagger'));
 router.use('/reviews', require('./reviews'));
 router.use('/restaurants', require('./restaurants'));
 
-// router.get('/', (req, res) => {
-//     //#swagger.tags = ['Hello World']
-//     res.send('Hello World');
-// })
-
-
-
 //set log in and logout routes
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 

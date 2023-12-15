@@ -18,7 +18,7 @@ const getSingleRestaurant = async (req, res) => {
     const result = await mongodb.getDatabase().db('project').collection('restaurants').find({ _id: restaurantId });
     result.toArray().then((restaurants) => {
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(restaurants);
+        res.status(200).json(restaurants[0]);
     });
 };
 
